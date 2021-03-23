@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ryan.db.mapper.UsersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ryan.db.entity.UsersEntity">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="nickname" property="nickname" />
+        <result column="gender" property="gender" />
+        <result column="birthday" property="birthday" />
+        <result column="id_card" property="idCard" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="icon" property="icon" />
+        <result column="role" property="role" />
+        <result column="title" property="title" />
+        <result column="create_time" property="createTime" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="is_delete" property="isDelete" />
+    </resultMap>
+    <select id="getInfoByUsername" resultType="com.ryan.db.entity.UsersEntity">
+        select * from users where username = #{username} and is_delete = 0
+    </select>
+
+
+</mapper>

@@ -1,0 +1,92 @@
+server:
+  port: 9001
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
+
+spring:
+  application:
+    name: server
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false
+  datasource:
+#    default:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+      url: jdbc:p6spy:mysql://localhost:3306/model?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: 12345678
+
+## Redis 配置
+  redis:
+  ## Redis数据库索引（默认为0）
+    database: 0
+  ## Redis服务器地址
+    host: ${LONGMARCH_REDIS_IP:127.0.0.1}
+  ## Redis服务器连接端口
+    port: ${LONGMARCH_REDIS_PORT:6379}
+  ## Redis服务器连接密码（默认为空）
+    password: ${LONGMARCH_REDIS_PWD:}
+  ## 连接超时时间（毫秒）
+    timeout: 3000
+    jedis:
+      pool:
+    ## 连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+    ## 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+    ## 连接池中的最大空闲连接
+        max-idle: 50
+    ## 连接池中的最小空闲连接
+        min-idle: 0
+
+
+#是否激活 swagger true or false
+swagger:
+  enabled: true
+  title: 测试接口
+  description: 测试接口
+  version: 1.0.0
+  package: com.ryan.server.controller
+  contact:
+      name: Ryan
+      url:
+      email: xxxxxxx@qq.com
+
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.ryan.db.entity
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 0
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 1
+    #驼峰下划线转换
+    db-column-underline: true
+    #刷新mapper 调试神器
+    #refresh-mapper: true
+    #数据库大写下划线转换
+    #capital-mode: true
+    #序列接口实现类配置
+    #key-generator: com.baomidou.springboot.xxx
+    #逻辑删除配置
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+    #自定义填充策略接口实现
+    #meta-object-handler: com.baomidou.springboot.xxx
+    #自定义SQL注入器
+    #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true

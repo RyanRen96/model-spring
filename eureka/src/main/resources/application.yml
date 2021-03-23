@@ -1,0 +1,24 @@
+server:
+  port: 9000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #     声明是否将自己的信息注册到 Eureka 服务器上
+    registerWithEureka: false
+    #     是否到 Eureka 服务器中抓取注册信息
+    fetchRegistry: false
+    serviceUrl:
+      # 安全器的账号密码在pom.xml中，如果不需要，将配置文件中的 依赖删除即可
+#      defaultZone: http://@eureka.user.name@:@eureka.user.password@@${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+spring:
+  application:
+    name: eurka
+#  security:
+#    user:
+#      name: @eureka.user.name@
+#      password: @eureka.user.password@

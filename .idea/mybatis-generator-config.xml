@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisGeneratorConfiguration">
+    <option name="credentials">
+      <map>
+        <entry key="jdbc:mysql://localhost:3306/model">
+          <value>
+            <Credential>
+              <option name="username" value="root" />
+            </Credential>
+          </value>
+        </entry>
+        <entry key="jdbc:oracle:thin:@10.1.8.80:1521:ORCL">
+          <value>
+            <Credential>
+              <option name="username" value="pm_test" />
+            </Credential>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableConfigs">
+      <map>
+        <entry key="PROJECTINFOS">
+          <value>
+            <TableConfig>
+              <option name="basePackage" value="com.ryan.db" />
+              <option name="comment" value="true" />
+              <option name="domainName" value="Projectinfos" />
+              <option name="domainPackage" value="com.ryan.db.entity" />
+              <option name="exampleName" value="ProjectinfosExample" />
+              <option name="examplePackage" value="com.ryan.db.service" />
+              <option name="examplePostfix" value="Example" />
+              <option name="mapperName" value="ProjectinfosMapper" />
+              <option name="mapperPackage" value="com.ryan.db.mapper" />
+              <option name="mapperPostfix" value="Mapper" />
+              <option name="moduleRootPath" value="$PROJECT_DIR$" />
+              <option name="name" value="PROJECTINFOS" />
+              <option name="primaryKey" value="ID" />
+              <option name="resourcePath" value="src/main/resources" />
+              <option name="sourcePath" value="src/main/java" />
+              <option name="tableName" value="PROJECTINFOS" />
+              <option name="useExample" value="true" />
+              <option name="xmlPackage" value="mapper" />
+            </TableConfig>
+          </value>
+        </entry>
+        <entry key="users">
+          <value>
+            <TableConfig>
+              <option name="basePackage" value="com.ryan.db" />
+              <option name="comment" value="true" />
+              <option name="domainName" value="Users" />
+              <option name="domainPackage" value="com.ryan.db.entity" />
+              <option name="exampleName" value="UsersController" />
+              <option name="examplePackage" value="com.ryan.db.service" />
+              <option name="examplePostfix" value="Example" />
+              <option name="lombokAnnotation" value="true" />
+              <option name="mapperName" value="UsersMapper" />
+              <option name="mapperPackage" value="com.ryan.db.mapper" />
+              <option name="mapperPostfix" value="Mapper" />
+              <option name="moduleRootPath" value="$PROJECT_DIR$" />
+              <option name="mysql8" value="true" />
+              <option name="name" value="users" />
+              <option name="primaryKey" value="id" />
+              <option name="resourcePath" value="src/main/resources" />
+              <option name="sourcePath" value="src/main/java" />
+              <option name="tableName" value="users" />
+              <option name="xmlPackage" value="mapper" />
+            </TableConfig>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
