@@ -32,6 +32,9 @@ model-spring
 - 验证码工具类实现（需要先实现jwt，因为需要以token为key，保存验证码到redis） ✅
 - 密码加密储存 ✅
 - 验证码 ✅
+- AOUTH2  
+- 配置redis ✅
+- ELK
 - jwt
 - 邮件发送功能
 - 管理多数据源

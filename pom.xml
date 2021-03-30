@@ -13,6 +13,7 @@
         <module>eureka</module>
         <module>common</module>
         <module>common-db</module>
+        <module>common-oauth</module>
         <module>core</module>
         <module>test-server</module>
     </modules>
