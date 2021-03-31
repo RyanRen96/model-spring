@@ -7,6 +7,7 @@ import com.ryan.common.dao.R;
 import com.ryan.common.dao.RException;
 import com.ryan.db.entity.UsersEntity;
 import com.ryan.db.service.UsersService;
+import com.ryan.oauth.token.LoginFilterService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,9 @@ public class LoginController {
 
     @Autowired
     private UsersService usersService;
+
+    @Autowired
+    private LoginFilterService loginFilterService;
 
     /**
      * 获取验证码
@@ -77,12 +81,12 @@ public class LoginController {
             return R.error(CodeDefined.ERROR_USER_OR_PASS);
         }
         // 验证码校验
-//        String customSessionToken = user.getCustomSessionToken();
+        String customSessionToken = user.getCustomSessionToken();
 //        if (dynamicConfig.isOpenCaptcha()) {
-//            if (!loginFilterService.verifyRedisCaptcha(customSessionToken, user.getCaptcha())) {
-//                return R.error(CodeDefined.ERROR_CAPTCHA);
+            if (!loginFilterService.verifyRedisCaptcha(customSessionToken, user.getVerificationCode())) {
+                return R.error(CodeDefined.ERROR_CAPTCHA);
 //            }
-//        }
+        }
 
         return R.ok();
     }

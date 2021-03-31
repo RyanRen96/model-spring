@@ -90,7 +90,7 @@ public class UsersEntity implements Serializable {
 
     @TableField(exist = false)
     @ApiModelProperty(value = "验证码")
-    private Integer verificationCode;
+    private String verificationCode;
 
     /**
      * 自定义token，用于取代session，作为每次会话的标记

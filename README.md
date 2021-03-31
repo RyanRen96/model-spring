@@ -13,11 +13,15 @@ model-spring
   - entity
   - service
   - mapper
+- common-oauth：oauth授权公共模块
+  - config
+  - customImpl
+  - token
 - core：核心功能模块
   - controller：功能模块
   - loginController：登录功能模块
 - eureka：注册中心
-- oauth： oauth授权
+- portal：门户模块
 - test-server：测试新功能的功能模块
 
 
