@@ -22,7 +22,7 @@ model-spring
 
 
 
-### 已实现与待实现目录
+### 已实现与待实现的功能目录
 
 - swagger API文档UI自动生成  ✅
 - mybatis & mybatis-plus  ✅

@@ -77,12 +77,12 @@ public class LoginController {
             return R.error(CodeDefined.ERROR_USER_OR_PASS);
         }
         // 验证码校验
-        String customSessionToken = user.getCustomSessionToken();
-        if (dynamicConfig.isOpenCaptcha()) {
-            if (!loginFilterService.verifyRedisCaptcha(customSessionToken, user.getCaptcha())) {
-                return R.error(CodeDefined.ERROR_CAPTCHA);
-            }
-        }
+//        String customSessionToken = user.getCustomSessionToken();
+//        if (dynamicConfig.isOpenCaptcha()) {
+//            if (!loginFilterService.verifyRedisCaptcha(customSessionToken, user.getCaptcha())) {
+//                return R.error(CodeDefined.ERROR_CAPTCHA);
+//            }
+//        }
 
         return R.ok();
     }
