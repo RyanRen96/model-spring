@@ -8,12 +8,13 @@
         <option value="$PROJECT_DIR$/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/server/pom.xml" />
         <option value="$PROJECT_DIR$/core/pom.xml" />
-        <option value="$PROJECT_DIR$/oauth/pom.xml" />
+        <option value="$PROJECT_DIR$/portal/pom.xml" />
+        <option value="$PROJECT_DIR$/common-oauth/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/common-oauth/pom.xml" />
+        <option value="$PROJECT_DIR$/common-portal/pom.xml" />
       </set>
     </option>
   </component>

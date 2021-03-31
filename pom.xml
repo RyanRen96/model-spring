@@ -13,9 +13,9 @@
         <module>eureka</module>
         <module>common</module>
         <module>common-db</module>
-        <module>oauth</module>
         <module>core</module>
         <module>test-server</module>
+        <module>common-oauth</module>
     </modules>
 
     <properties>
