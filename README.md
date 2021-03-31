@@ -17,6 +17,7 @@ model-spring
   - controller：功能模块
   - loginController：登录功能模块
 - eureka：注册中心
+- oauth： oauth授权
 - test-server：测试新功能的功能模块
 
 
