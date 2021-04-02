@@ -1,6 +1,10 @@
 # model-spring
 My test-demo in Spring-Cloud
 
+### 框架介绍
+
+开发环境：Mysql8.0、Jdk1.8、Maven3.6.3、开发工具IDEA
+
 ### **项目结构**
 
 model-spring
