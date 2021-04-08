@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
+        <module name="server" />
         <module name="common" />
         <module name="test-server" />
         <module name="eureka" />
@@ -29,6 +30,7 @@
       <module name="eureka" options="-parameters" />
       <module name="oauth" options="-parameters" />
       <module name="portal" options="-parameters" />
+      <module name="server" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="test-server" options="-parameters" />
     </option>

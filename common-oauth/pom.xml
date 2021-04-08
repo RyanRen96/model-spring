@@ -31,6 +31,12 @@
             <artifactId>spring-cloud-starter-oauth2</artifactId>
             <version>2.2.4.RELEASE</version>
         </dependency>
+        <!-- Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理 -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.7.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.example</groupId>

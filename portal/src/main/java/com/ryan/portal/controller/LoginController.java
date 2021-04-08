@@ -1,4 +1,4 @@
-package com.ryan.core.login;
+package com.ryan.portal.controller;
 
 import com.ryan.common.Util.CaptchaUtil;
 import com.ryan.common.Util.StringUtil;
@@ -7,8 +7,8 @@ import com.ryan.common.dao.R;
 import com.ryan.common.dao.RException;
 import com.ryan.db.entity.UsersEntity;
 import com.ryan.db.service.UsersService;
+import com.ryan.oauth.OAuth2TokenUsernamePassword;
 import com.ryan.oauth.token.LoginFilterService;
-import com.ryan.portal.config.DynamicConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ import java.io.IOException;
 @Api("登录功能接口")
 @RestController
 @RequestMapping("login")
-public class LoginController {
+public class LoginController extends AbstractController{
 
     @Autowired
     private UsersService usersService;
@@ -35,8 +35,8 @@ public class LoginController {
     @Autowired
     private LoginFilterService loginFilterService;
 
-    @Autowired
-    private DynamicConfig dynamicConfig;
+//    @Autowired
+//    private DynamicConfig dynamicConfig;
 
     /**
      * 获取验证码
@@ -84,15 +84,18 @@ public class LoginController {
         if (!usersService.checkPassword(user.getPassword(), usersEntity.getPassword())) {
             return R.error(CodeDefined.ERROR_USER_OR_PASS);
         }
-        // 验证码校验
-        String customSessionToken = user.getCustomSessionToken();
-        if (dynamicConfig.isOpenCaptcha()) {
-            if (!loginFilterService.verifyRedisCaptcha(customSessionToken, user.getVerificationCode())) {
-                return R.error(CodeDefined.ERROR_CAPTCHA);
-            }
-        }
+//        // 验证码校验
+//        String customSessionToken = user.getCustomSessionToken();
+////        if (dynamicConfig.isOpenCaptcha()) {
+//            if (!loginFilterService.verifyRedisCaptcha(customSessionToken, user.getVerificationCode())) {
+//                return R.error(CodeDefined.ERROR_CAPTCHA);
+////            }
+//        }
+        OAuth2TokenUsernamePassword oAuth2TokenUsernamePassword = new OAuth2TokenUsernamePassword(user.getUsername(), user.getPassword());
 
-        return R.ok();
+        String token = oAuth2TokenUsernamePassword.getPrincipal();
+
+        return R.ok().put("token", token);
     }
 
     @ApiOperation("注册")
