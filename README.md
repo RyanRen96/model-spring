@@ -34,7 +34,7 @@ model-spring
 - 配置redis ✅
 - ELK
 - jwt
-- 邮件发送功能 
+- 邮件发送功能 ✅
 - 管理多数据源 
 - IO流
 - xxl-job同步任务
